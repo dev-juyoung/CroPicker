@@ -2,6 +2,8 @@ package xyz.dev_juyoung.cropicker.base;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
@@ -12,6 +14,7 @@ import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -65,6 +68,10 @@ public class CroPickerActivity extends AppCompatActivity {
         toolbar.setBackgroundColor(Configs.toolbarColor);
         toolbar.setTitleTextColor(Configs.toolbarWidgetColor);
 
+        final Drawable upArrow = ContextCompat.getDrawable(this, Configs.toolbarWidgetColor);
+        upArrow.setColorFilter(Configs.toolbarWidgetColor, PorterDuff.Mode.SRC_ATOP);
+        toolbar.setNavigationIcon(upArrow);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(Configs.toolbarTitle);
     }
@@ -78,6 +85,17 @@ public class CroPickerActivity extends AppCompatActivity {
                 window.setStatusBarColor(color);
             }
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void showMessage(@StringRes int resId) {
