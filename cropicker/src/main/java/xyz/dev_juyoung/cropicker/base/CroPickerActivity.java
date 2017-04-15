@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
  * Created by juyounglee on 2017. 4. 15..
  */
 
-public class BaseActivity extends AppCompatActivity {
+public class CroPickerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +35,10 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void progressShow() {
-        BaseApplication.getInstance().progressShow(this);
+        CroPickerApplication.getInstance().progressShow(this);
     }
 
     public void progressDismiss() {
-        BaseApplication.getInstance().progressDismiss();
+        CroPickerApplication.getInstance().progressDismiss();
     }
 }

@@ -12,18 +12,18 @@ import xyz.dev_juyoung.cropicker.R;
  * Created by juyounglee on 2017. 4. 15..
  */
 
-public class BaseApplication extends Application {
-    private static BaseApplication baseApplication;
+public class CroPickerApplication extends Application {
+    private static CroPickerApplication application;
     private AppCompatDialog progressDialog;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        this.baseApplication = this;
+        this.application = this;
     }
 
-    public static BaseApplication getInstance() {
-        return baseApplication;
+    public static CroPickerApplication getInstance() {
+        return application;
     }
 
     public void progressShow(Activity activity) {
