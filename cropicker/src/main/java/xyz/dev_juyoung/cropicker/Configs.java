@@ -9,4 +9,5 @@ public class Configs {
     public static int toolbarColor;
     public static int toolbarWidgetColor;
     public static String toolbarTitle;
+    public static int toolbarArrowDrawable;
 }

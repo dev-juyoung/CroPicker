@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -78,6 +79,7 @@ public class CroPicker {
         public static final String EXTRA_STATUSBAR_COLOR = EXTRA_PREFIX + ".StatusBarColor";
         public static final String EXTRA_TOOLBAR_WIDGET_COLOR = EXTRA_PREFIX + ".ToolbarWidgetColor";
         public static final String EXTRA_TOOLBAR_TITLE_TEXT = EXTRA_PREFIX + ".ToolbarTitleText";
+        public static final String EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE = EXTRA_PREFIX + ".BackArrowDrawable";
 
         private Bundle mOptionBundle;
 
@@ -104,6 +106,10 @@ public class CroPicker {
 
         public void setToolbarTitle(@Nullable String text) {
             mOptionBundle.putString(EXTRA_TOOLBAR_TITLE_TEXT, text);
+        }
+
+        public void setToolbarBackArrowDrawable(@DrawableRes int drawable) {
+            mOptionBundle.putInt(EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, drawable);
         }
     }
 }

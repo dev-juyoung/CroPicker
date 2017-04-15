@@ -59,6 +59,7 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.toolbarColor = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_COLOR, ContextCompat.getColor(this, R.color.colorPrimary));
         Configs.toolbarWidgetColor = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_WIDGET_COLOR, ContextCompat.getColor(this, R.color.colorWhite));
         Configs.toolbarTitle = intent.getStringExtra(CroPicker.Options.EXTRA_TOOLBAR_TITLE_TEXT);
+        Configs.toolbarArrowDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, R.drawable.abc_ic_ab_back_material);
     }
 
     public void setupToolbar() {
@@ -68,7 +69,7 @@ public class CroPickerActivity extends AppCompatActivity {
         toolbar.setBackgroundColor(Configs.toolbarColor);
         toolbar.setTitleTextColor(Configs.toolbarWidgetColor);
 
-        final Drawable upArrow = ContextCompat.getDrawable(this, Configs.toolbarWidgetColor);
+        final Drawable upArrow = ContextCompat.getDrawable(this, Configs.toolbarArrowDrawable);
         upArrow.setColorFilter(Configs.toolbarWidgetColor, PorterDuff.Mode.SRC_ATOP);
         toolbar.setNavigationIcon(upArrow);
 
