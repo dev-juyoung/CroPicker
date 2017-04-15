@@ -60,6 +60,7 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.toolbarWidgetColor = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_WIDGET_COLOR, ContextCompat.getColor(this, R.color.colorWhite));
         Configs.toolbarTitle = intent.getStringExtra(CroPicker.Options.EXTRA_TOOLBAR_TITLE_TEXT);
         Configs.toolbarArrowDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, R.drawable.abc_ic_ab_back_material);
+        Configs.toolbarDoneDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_DONE_DRAWABLE, R.drawable.ic_done_white_24dp);
     }
 
     public void setupToolbar() {

@@ -10,4 +10,5 @@ public class Configs {
     public static int toolbarWidgetColor;
     public static String toolbarTitle;
     public static int toolbarArrowDrawable;
+    public static int toolbarDoneDrawable;
 }

@@ -80,6 +80,7 @@ public class CroPicker {
         public static final String EXTRA_TOOLBAR_WIDGET_COLOR = EXTRA_PREFIX + ".ToolbarWidgetColor";
         public static final String EXTRA_TOOLBAR_TITLE_TEXT = EXTRA_PREFIX + ".ToolbarTitleText";
         public static final String EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE = EXTRA_PREFIX + ".BackArrowDrawable";
+        public static final String EXTRA_TOOLBAR_DONE_DRAWABLE = EXTRA_PREFIX + ".DoneDrawable";
 
         private Bundle mOptionBundle;
 
@@ -110,6 +111,10 @@ public class CroPicker {
 
         public void setToolbarBackArrowDrawable(@DrawableRes int drawable) {
             mOptionBundle.putInt(EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, drawable);
+        }
+
+        public void setToolbarDoneDrawable(@DrawableRes int drawable) {
+            mOptionBundle.putInt(EXTRA_TOOLBAR_DONE_DRAWABLE, drawable);
         }
     }
 }
