@@ -1,5 +1,6 @@
 package xyz.dev_juyoung.cropicker.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -9,17 +10,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import xyz.dev_juyoung.cropicker.R2;
+import xyz.dev_juyoung.cropicker.CroPicker;
+import xyz.dev_juyoung.cropicker.R;
 
 /**
  * Created by juyounglee on 2017. 4. 15..
  */
 
 public class CroPickerActivity extends AppCompatActivity {
+    /*
     @BindView(R2.id.toolbar)
     Toolbar toolbar;
+    */
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,10 +34,20 @@ public class CroPickerActivity extends AppCompatActivity {
         super.setContentView(layoutResID);
         ButterKnife.bind(this);
 
+        checkInitializeConfigs(getIntent());
         setupToolbar();
     }
 
+    private void checkInitializeConfigs(@Nullable Intent intent) {
+        if (intent != null) {
+            boolean isSetupConfigs = intent.getBooleanExtra(CroPicker.EXTRA_INIT_CONFIGS, false);
+            if (isSetupConfigs) showMessage("Setting Configs");
+        }
+    }
+
     public void setupToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
     }
 
