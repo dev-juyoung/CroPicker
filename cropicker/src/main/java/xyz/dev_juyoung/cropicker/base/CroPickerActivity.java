@@ -1,15 +1,22 @@
 package xyz.dev_juyoung.cropicker.base;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
+import xyz.dev_juyoung.cropicker.Configs;
 import xyz.dev_juyoung.cropicker.CroPicker;
 import xyz.dev_juyoung.cropicker.R;
 
@@ -40,14 +47,37 @@ public class CroPickerActivity extends AppCompatActivity {
     private void checkInitializeConfigs(@Nullable Intent intent) {
         if (intent != null) {
             boolean isSetupConfigs = intent.getBooleanExtra(CroPicker.EXTRA_INIT_CONFIGS, false);
-            if (isSetupConfigs) showMessage("Setting Configs");
+            if (isSetupConfigs) setupConfigs(intent);
         }
+    }
+
+    private void setupConfigs(@NonNull Intent intent) {
+        Configs.statusColor = intent.getIntExtra(CroPicker.Options.EXTRA_STATUSBAR_COLOR, ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        Configs.toolbarColor = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_COLOR, ContextCompat.getColor(this, R.color.colorPrimary));
+        Configs.toolbarWidgetColor = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_WIDGET_COLOR, ContextCompat.getColor(this, R.color.colorWhite));
+        Configs.toolbarTitle = intent.getStringExtra(CroPicker.Options.EXTRA_TOOLBAR_TITLE_TEXT);
     }
 
     public void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        setStatusBarColor(Configs.statusColor);
+        toolbar.setBackgroundColor(Configs.toolbarColor);
+        toolbar.setTitleTextColor(Configs.toolbarWidgetColor);
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(Configs.toolbarTitle);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void setStatusBarColor(@ColorInt int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            final Window window = getWindow();
+            if (window != null) {
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(color);
+            }
+        }
     }
 
     public void showMessage(@StringRes int resId) {
