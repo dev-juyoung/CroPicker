@@ -33,4 +33,12 @@ public class BaseActivity extends AppCompatActivity {
     public void showMessage(@NonNull String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
+    public void progressShow() {
+        BaseApplication.getInstance().progressShow(this);
+    }
+
+    public void progressDismiss() {
+        BaseApplication.getInstance().progressDismiss();
+    }
 }
