@@ -1,6 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
-    package="xyz.dev_juyoung.cropicker">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="xyz.dev_juyoung.cropicker">
 
     <application
         android:allowBackup="true"
