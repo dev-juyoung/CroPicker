@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="sm_spacing">8dp</dimen>
+    <dimen name="md_spacing">16dp</dimen>
+    <dimen name="lg_spacing">24dp</dimen>
+
+    <dimen name="sm_grid_spacing">2dp</dimen>
+    <dimen name="md_grid_spacing">4dp</dimen>
+    <dimen name="lg_grid_spacing">8dp</dimen>
+
+    <dimen name="xxxs_fontsize">6sp</dimen>
+    <dimen name="xxs_fontsize">8sp</dimen>
+    <dimen name="xs_fontsize">10sp</dimen>
+    <dimen name="sm_fontsize">12sp</dimen>
+    <dimen name="md_fontsize">14sp</dimen>
+    <dimen name="lg_fontsize">16sp</dimen>
+    <dimen name="xl_fontsize">18sp</dimen>
+    <dimen name="xxl_fontsize">20sp</dimen>
+    <dimen name="xxxl_fontsize">22sp</dimen>
+
+    <dimen name="sm_linesize">1dp</dimen>
+    <dimen name="md_linesize">4dp</dimen>
+    <dimen name="lg_linesize">8dp</dimen>
+
+</resources>

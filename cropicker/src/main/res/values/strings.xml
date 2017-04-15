@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CroPicker</string>
+
+    <string name="toolbar_title_album">앨범</string>
+    <string name="toolbar_action_done">확인</string>
+
+    <string name="not_found_bucket_id">폴더정보를 불러오지 못했어요...</string>
+    <string name="not_selected_images">선택된 이미지가 없어요...</string>
+    <string name="limited_exeed_message">최대 %1$d장 까지만 선택 가능합니다.</string>
 </resources>

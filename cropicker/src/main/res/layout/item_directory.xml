@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.dev_juyoung.cropickersample.widgets.SquareRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/iv_resource"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@mipmap/ic_launcher"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/sm_spacing"
+        android:orientation="horizontal"
+        android:background="#A6000000">
+
+        <TextView
+            android:id="@+id/tv_dir_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/sm_spacing"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="앨범의 제목이 들어간다"
+            android:textSize="@dimen/md_fontsize"
+            android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/tv_dir_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="100"
+            android:textSize="@dimen/md_fontsize"
+            android:textColor="@color/colorWhite"
+            />
+
+    </LinearLayout>
+
+</xyz.dev_juyoung.cropickersample.widgets.SquareRelativeLayout>

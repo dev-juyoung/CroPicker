@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
+import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -81,6 +82,8 @@ public class CroPicker {
         public static final String EXTRA_TOOLBAR_TITLE_TEXT = EXTRA_PREFIX + ".ToolbarTitleText";
         public static final String EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE = EXTRA_PREFIX + ".BackArrowDrawable";
         public static final String EXTRA_TOOLBAR_DONE_DRAWABLE = EXTRA_PREFIX + ".DoneDrawable";
+        public static final String EXTRA_GRID_SPAN_COUNT_OF_ALBUM = EXTRA_PREFIX + ".GridSpanCountOfAlbum";
+        public static final String EXTRA_GRID_SPACING = EXTRA_PREFIX + ".GridSpacing";
 
         private Bundle mOptionBundle;
 
@@ -115,6 +118,14 @@ public class CroPicker {
 
         public void setToolbarDoneDrawable(@DrawableRes int drawable) {
             mOptionBundle.putInt(EXTRA_TOOLBAR_DONE_DRAWABLE, drawable);
+        }
+
+        public void setAlbumGridSpanCount(@NonNull int count) {
+            mOptionBundle.putInt(EXTRA_GRID_SPAN_COUNT_OF_ALBUM, count);
+        }
+
+        public void setGridSpacing(@DimenRes int dimenRes) {
+            mOptionBundle.putInt(EXTRA_GRID_SPACING, dimenRes);
         }
     }
 }

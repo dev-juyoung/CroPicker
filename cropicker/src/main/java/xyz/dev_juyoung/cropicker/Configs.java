@@ -11,4 +11,6 @@ public class Configs {
     public static String toolbarTitle;
     public static int toolbarArrowDrawable;
     public static int toolbarDoneDrawable;
+    public static int gridSpanCountOfAlbum;
+    public static int gridSpacing;
 }
