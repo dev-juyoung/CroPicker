@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import butterknife.ButterKnife;
 import xyz.dev_juyoung.cropicker.CroPicker;
 import xyz.dev_juyoung.cropicker.R;
 
@@ -32,7 +31,7 @@ public class CroPickerActivity extends AppCompatActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
 
         checkInitializeConfigs(getIntent());
         setupToolbar();
