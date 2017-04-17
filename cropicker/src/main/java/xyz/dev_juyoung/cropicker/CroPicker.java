@@ -23,6 +23,7 @@ import xyz.dev_juyoung.cropicker.activities.DirectoryActivity;
 
 public class CroPicker {
     public static final int REQUEST_ALBUM = 3641;
+    public static final int REQUEST_MEDIA = 2172;
 
     private static final String EXTRA_PREFIX = BuildConfig.APPLICATION_ID;
     public static final String EXTRA_INIT_CONFIGS = EXTRA_PREFIX + ".InitializeConfigs";

@@ -1,5 +1,6 @@
 package xyz.dev_juyoung.cropicker.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Process;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import xyz.dev_juyoung.cropicker.Configs;
+import xyz.dev_juyoung.cropicker.CroPicker;
 import xyz.dev_juyoung.cropicker.R;
 import xyz.dev_juyoung.cropicker.R2;
 import xyz.dev_juyoung.cropicker.adapters.DirectoryAdapter;
@@ -67,9 +69,11 @@ public class DirectoryActivity extends CroPickerActivity {
                 Album item = dispAlbum.get(position);
                 long id = item.getId();
                 String dispName = item.getDisplayName();
-                String previewImagePath = item.getPreviewImagePath();
-                int imageCount = item.getResourceCount();
-                showMessage("bucketId: \n - " + id + "\nbucketName: \n - " + dispName + "\npreviewPath: \n - " + previewImagePath + "\ncount: \n - " + imageCount);
+
+                Intent intent = new Intent(DirectoryActivity.this, MediaActivity.class);
+                intent.putExtra(EXTRA_BUCKET_ID, id);
+                intent.putExtra(EXTRA_BUCKET_NAME, dispName);
+                startActivityForResult(intent, CroPicker.REQUEST_MEDIA);
             }
         }));
     }

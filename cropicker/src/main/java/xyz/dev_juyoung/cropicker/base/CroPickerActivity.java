@@ -31,6 +31,9 @@ import xyz.dev_juyoung.cropicker.R2;
  */
 
 public class CroPickerActivity extends AppCompatActivity {
+    public static final String EXTRA_BUCKET_ID = "bucket_id";
+    public static final String EXTRA_BUCKET_NAME = "bucket_name";
+
     @BindView(R2.id.toolbar)
     Toolbar toolbar;
 
