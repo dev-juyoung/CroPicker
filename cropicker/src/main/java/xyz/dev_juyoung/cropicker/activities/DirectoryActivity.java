@@ -7,8 +7,10 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import xyz.dev_juyoung.cropicker.Configs;
 import xyz.dev_juyoung.cropicker.R;
+import xyz.dev_juyoung.cropicker.R2;
 import xyz.dev_juyoung.cropicker.adapters.DirectoryAdapter;
 import xyz.dev_juyoung.cropicker.base.CroPickerActivity;
 import xyz.dev_juyoung.cropicker.models.Album;
@@ -17,10 +19,8 @@ import xyz.dev_juyoung.cropicker.utils.MediaStoreProvider;
 
 public class DirectoryActivity extends CroPickerActivity {
 
-    // @BindView(R2.id.album_list)
-    // RecyclerView albumList;
-
-    private RecyclerView albumList;
+    @BindView(R2.id.album_list)
+    RecyclerView albumList;
 
     private ArrayList<Album> dispAlbum;
     private GridLayoutManager layoutManager;

@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import butterknife.BindView;
 import xyz.dev_juyoung.cropicker.R;
+import xyz.dev_juyoung.cropicker.R2;
 import xyz.dev_juyoung.cropicker.base.CroPickerRecyclerAdapter;
 import xyz.dev_juyoung.cropicker.base.CroPickerViewHolder;
 import xyz.dev_juyoung.cropicker.models.Album;
@@ -25,26 +27,15 @@ public class DirectoryAdapter extends CroPickerRecyclerAdapter<Album, DirectoryA
     }
 
     public class ViewHolder extends CroPickerViewHolder {
-        /*
         @BindView(R2.id.iv_resource)
         ImageView ivResource;
         @BindView(R2.id.tv_dir_name)
         TextView tvDirName;
         @BindView(R2.id.tv_dir_count)
         TextView tvDirCount;
-        */
-
-        public ImageView ivResource;
-        public TextView tvDirName;
-        public TextView tvDirCount;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
-            // View Binding
-            ivResource = (ImageView) itemView.findViewById(R.id.iv_resource);
-            tvDirName = (TextView) itemView.findViewById(R.id.tv_dir_name);
-            tvDirCount = (TextView) itemView.findViewById(R.id.tv_dir_count);
         }
     }
 

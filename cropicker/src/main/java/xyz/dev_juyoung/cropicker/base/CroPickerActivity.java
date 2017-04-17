@@ -19,19 +19,19 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import butterknife.BindView;
 import xyz.dev_juyoung.cropicker.Configs;
 import xyz.dev_juyoung.cropicker.CroPicker;
 import xyz.dev_juyoung.cropicker.R;
+import xyz.dev_juyoung.cropicker.R2;
 
 /**
  * Created by juyounglee on 2017. 4. 15..
  */
 
 public class CroPickerActivity extends AppCompatActivity {
-    /*
     @BindView(R2.id.toolbar)
     Toolbar toolbar;
-    */
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,8 +66,6 @@ public class CroPickerActivity extends AppCompatActivity {
     }
 
     public void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
         setStatusBarColor(Configs.statusColor);
         toolbar.setBackgroundColor(Configs.toolbarColor);
         toolbar.setTitleTextColor(Configs.toolbarWidgetColor);
