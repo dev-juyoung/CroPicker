@@ -5,6 +5,7 @@ import android.os.Process;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ import xyz.dev_juyoung.cropicker.base.CroPickerActivity;
 import xyz.dev_juyoung.cropicker.models.Album;
 import xyz.dev_juyoung.cropicker.utils.GridSpacingItemDecoration;
 import xyz.dev_juyoung.cropicker.utils.MediaStoreProvider;
+import xyz.dev_juyoung.cropicker.utils.RecyclerViewItemClickListener;
 
 public class DirectoryActivity extends CroPickerActivity {
 
@@ -35,6 +37,7 @@ public class DirectoryActivity extends CroPickerActivity {
         progressShow();
         setupToolbar();
         setupRecyclerView();
+        setupRecyclerViewEvent();
         getAlbumData();
     }
 
@@ -55,6 +58,20 @@ public class DirectoryActivity extends CroPickerActivity {
         albumList.setLayoutManager(layoutManager);
         albumList.addItemDecoration(new GridSpacingItemDecoration(layoutManager.getSpanCount(), Configs.gridSpacing, true));
         albumList.setAdapter(adapter);
+    }
+
+    private void setupRecyclerViewEvent() {
+        albumList.addOnItemTouchListener(new RecyclerViewItemClickListener(this, new RecyclerViewItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Album item = dispAlbum.get(position);
+                long id = item.getId();
+                String dispName = item.getDisplayName();
+                String previewImagePath = item.getPreviewImagePath();
+                int imageCount = item.getResourceCount();
+                showMessage("bucketId: \n - " + id + "\nbucketName: \n - " + dispName + "\npreviewPath: \n - " + previewImagePath + "\ncount: \n - " + imageCount);
+            }
+        }));
     }
 
     private void getAlbumData() {
