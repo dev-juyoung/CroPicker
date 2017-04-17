@@ -14,4 +14,12 @@ public class Configs {
     public static int gridSpanCountOfAlbum;
     public static int gridSpanCountOfMedia;
     public static int gridSpacing;
+    public static int overlayViewBackgroundColor;
+    public static int overlayViewStrokeColor;
+    public static int overlayViewStrokeWidth;
+    public static int indexViewType;
+    public static int indexViewTextSize;
+    public static int indexViewTextColor;
+    public static int indexViewIconDrawable;
+    public static String notSelectedMessage;
 }

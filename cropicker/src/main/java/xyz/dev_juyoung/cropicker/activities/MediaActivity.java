@@ -1,9 +1,14 @@
 package xyz.dev_juyoung.cropicker.activities;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Process;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -51,7 +56,6 @@ public class MediaActivity extends CroPickerActivity {
         if (getIntent() != null) {
             bucketId = getIntent().getLongExtra(EXTRA_BUCKET_ID, 0L);
             bucketName = getIntent().getStringExtra(EXTRA_BUCKET_NAME);
-            showMessage(bucketId + ", " + bucketName);
         } else {
             showMessage(getString(R.string.not_found_bucket_id));
             finish();
@@ -112,5 +116,37 @@ public class MediaActivity extends CroPickerActivity {
         });
 
         thread.start();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.toolbar_done, menu);
+
+        MenuItem actionDone = menu.findItem(R.id.action_done);
+
+        final Drawable doneIcon = ContextCompat.getDrawable(this, Configs.toolbarDoneDrawable);
+        if (doneIcon != null) {
+            doneIcon.mutate();
+            doneIcon.setColorFilter(Configs.toolbarWidgetColor, PorterDuff.Mode.SRC_ATOP);
+            actionDone.setIcon(doneIcon);
+        }
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_done) {
+            if (selectedMedia.size() > 0) {
+                showMessage("selectedMedia: " + selectedMedia);
+            } else {
+                showMessage(Configs.notSelectedMessage);
+            }
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

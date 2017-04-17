@@ -69,6 +69,16 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.gridSpanCountOfMedia = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPAN_COUNT_OF_MEDIA, 3);
         Configs.gridSpacing = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPACING, R.dimen.md_grid_spacing);
         Configs.gridSpacing = getResources().getDimensionPixelSize(Configs.gridSpacing);
+        Configs.overlayViewBackgroundColor = intent.getIntExtra(CroPicker.Options.EXTRA_OVERLAY_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.colorOverlay));
+        Configs.overlayViewStrokeColor = intent.getIntExtra(CroPicker.Options.EXTRA_OVERLAY_VIEW_STROKE_COLOR, ContextCompat.getColor(this, R.color.colorPrimary));
+        Configs.overlayViewStrokeWidth = intent.getIntExtra(CroPicker.Options.EXTRA_OVERLAY_VIEW_STROKE_WIDTH, R.dimen.md_linesize);
+        Configs.overlayViewStrokeWidth = getResources().getDimensionPixelSize(Configs.overlayViewStrokeWidth);
+        Configs.indexViewType = intent.getIntExtra(CroPicker.Options.EXTRA_INDEX_VIEW_TYPE, CroPicker.INDEX_VIEW_TYPE_TEXT);
+        Configs.indexViewTextSize = intent.getIntExtra(CroPicker.Options.EXTRA_INDEX_VIEW_TEXT_SIZE, 24);
+        Configs.indexViewTextColor = intent.getIntExtra(CroPicker.Options.EXTRA_INDEX_VIEW_TEXT_COLOR, ContextCompat.getColor(this, R.color.colorWhite));
+        Configs.indexViewIconDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_INDEX_VIEW_ICON_DRAWABLE, R.drawable.ic_check_circle_white_48dp);
+        Configs.notSelectedMessage = intent.getStringExtra(CroPicker.Options.EXTRA_NOT_SELECTED_MESSAGE);
+        Configs.notSelectedMessage = Configs.notSelectedMessage != null ? Configs.notSelectedMessage : getString(R.string.not_selected_images);
     }
 
     public void setupToolbar() {

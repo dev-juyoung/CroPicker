@@ -24,6 +24,8 @@ import xyz.dev_juyoung.cropicker.activities.DirectoryActivity;
 public class CroPicker {
     public static final int REQUEST_ALBUM = 3641;
     public static final int REQUEST_MEDIA = 2172;
+    public static final int INDEX_VIEW_TYPE_TEXT = 123;
+    public static final int INDEX_VIEW_TYPE_ICON = 321;
 
     private static final String EXTRA_PREFIX = BuildConfig.APPLICATION_ID;
     public static final String EXTRA_INIT_CONFIGS = EXTRA_PREFIX + ".InitializeConfigs";
@@ -86,6 +88,15 @@ public class CroPicker {
         public static final String EXTRA_GRID_SPAN_COUNT_OF_ALBUM = EXTRA_PREFIX + ".GridSpanCountOfAlbum";
         public static final String EXTRA_GRID_SPAN_COUNT_OF_MEDIA = EXTRA_PREFIX + ".GridSpanCountOfMedia";
         public static final String EXTRA_GRID_SPACING = EXTRA_PREFIX + ".GridSpacing";
+        public static final String EXTRA_OVERLAY_VIEW_BACKGROUND_COLOR = EXTRA_PREFIX + ".OverlayViewBackgroundColor";
+        public static final String EXTRA_OVERLAY_VIEW_STROKE_COLOR = EXTRA_PREFIX + ".OverlayViewStrokeColor";
+        public static final String EXTRA_OVERLAY_VIEW_STROKE_WIDTH = EXTRA_PREFIX + ".OverlayViewStrokeWidth";
+        public static final String EXTRA_INDEX_VIEW_TYPE = EXTRA_PREFIX + ".IndexViewType";
+        public static final String EXTRA_INDEX_VIEW_TEXT_SIZE = EXTRA_PREFIX + ".IndexViewTextSize";
+        public static final String EXTRA_INDEX_VIEW_TEXT_COLOR = EXTRA_PREFIX + ".IndexViewTextColor";
+        public static final String EXTRA_INDEX_VIEW_ICON_DRAWABLE = EXTRA_PREFIX + ".IndexViewIconDrawable";
+
+        public static final String EXTRA_NOT_SELECTED_MESSAGE = EXTRA_PREFIX + ".NotSelectedMessage";
 
         private Bundle mOptionBundle;
 
@@ -132,6 +143,44 @@ public class CroPicker {
 
         public void setGridSpacing(@DimenRes int dimenRes) {
             mOptionBundle.putInt(EXTRA_GRID_SPACING, dimenRes);
+        }
+
+        public void setOverlayViewBackgroundColor(@ColorInt int color) {
+            mOptionBundle.putInt(EXTRA_OVERLAY_VIEW_BACKGROUND_COLOR, color);
+        }
+
+        public void setOverlayViewStrokeColor(@ColorInt int color) {
+            mOptionBundle.putInt(EXTRA_OVERLAY_VIEW_STROKE_COLOR, color);
+        }
+
+        public void setOverlayViewStrokeWidth(@DimenRes int dimenRes) {
+            mOptionBundle.putInt(EXTRA_OVERLAY_VIEW_STROKE_WIDTH, dimenRes);
+        }
+
+        public void setIndexViewType(@NonNull int type) {
+            int inType = type;
+
+            if (inType != INDEX_VIEW_TYPE_TEXT && inType != INDEX_VIEW_TYPE_ICON) {
+                inType = INDEX_VIEW_TYPE_TEXT;
+            }
+
+            mOptionBundle.putInt(EXTRA_INDEX_VIEW_TYPE, inType);
+        }
+
+        public void setIndexViewTextSize(@NonNull int size) {
+            mOptionBundle.putInt(EXTRA_INDEX_VIEW_TEXT_SIZE, size);
+        }
+
+        public void setIndexViewTextColor(@ColorInt int color) {
+            mOptionBundle.putInt(EXTRA_INDEX_VIEW_TEXT_COLOR, color);
+        }
+
+        public void setIndexViewIconDrawable(@DrawableRes int drawable) {
+            mOptionBundle.putInt(EXTRA_INDEX_VIEW_ICON_DRAWABLE, drawable);
+        }
+
+        public void setNotSelectedMessage(@Nullable String text) {
+            mOptionBundle.putString(EXTRA_NOT_SELECTED_MESSAGE, text);
         }
     }
 }
