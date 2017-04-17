@@ -51,7 +51,6 @@ public class DirectoryAdapter extends CroPickerRecyclerAdapter<Album, DirectoryA
 
         Glide.with(getContext())
                 .load(currentItem.getPreviewImagePath())
-                //.thumbnail(0.1f)
                 .centerCrop()
                 .into(holder.ivResource);
 

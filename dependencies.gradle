@@ -12,7 +12,7 @@ ext {
     bintrayRepository = 'maven'
     groupId = 'xyz.dev_juyoung'
     libraryName = 'cropicker'
-    libraryVersion = '0.0.1-alpha4'
+    libraryVersion = '0.0.2-alpha6'
     libraryDescription = 'CroPicker is album and image Picker Library for Android. Supports import a list of Albums and support multiple image selection.'
     gitUrl = 'https://github.com/dev-juyoung/CroPicker.git'
     siteUrl = 'https://github.com/dev-juyoung/CroPicker'

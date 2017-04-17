@@ -53,7 +53,9 @@ public abstract class CroPickerRecyclerAdapter<T, H extends RecyclerView.ViewHol
 
     @Override
     public int getItemCount() {
-        if (items == null) return 0;
+        if (items == null) {
+            return 0;
+        }
 
         return items.size();
     }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Process;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,8 @@ public class DirectoryActivity extends CroPickerActivity {
     }
 
     private void setupRecyclerView() {
+        Log.d("GRID SPAN COUNT", "Configs.gridSpanCountOfAlbum: " + Configs.gridSpanCountOfAlbum);
+
         layoutManager = new GridLayoutManager(this, Configs.gridSpanCountOfAlbum);
         adapter = new DirectoryAdapter(this);
         albumList.setHasFixedSize(true);
@@ -66,7 +69,7 @@ public class DirectoryActivity extends CroPickerActivity {
                     @Override
                     public void run() {
                         adapter.updateItems(dispAlbum);
-                        // progressDismiss();
+                        progressDismiss();
                     }
                 });
             }

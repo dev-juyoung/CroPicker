@@ -20,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import xyz.dev_juyoung.cropicker.Configs;
 import xyz.dev_juyoung.cropicker.CroPicker;
 import xyz.dev_juyoung.cropicker.R;
@@ -41,7 +42,7 @@ public class CroPickerActivity extends AppCompatActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
-        //ButterKnife.bind(this);
+        ButterKnife.bind(this);
 
         checkInitializeConfigs(getIntent());
         setupToolbar();
@@ -63,6 +64,7 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.toolbarDoneDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_DONE_DRAWABLE, R.drawable.ic_done_white_24dp);
         Configs.gridSpanCountOfAlbum = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPAN_COUNT_OF_ALBUM, 2);
         Configs.gridSpacing = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPACING, R.dimen.md_grid_spacing);
+        Configs.gridSpacing = getResources().getDimensionPixelSize(Configs.gridSpacing);
     }
 
     public void setupToolbar() {
@@ -75,7 +77,6 @@ public class CroPickerActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(upArrow);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(Configs.toolbarTitle);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

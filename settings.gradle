@@ -1,1 +1,1 @@
-include ':cropicker'
+include ':cropicker', ':sample'
