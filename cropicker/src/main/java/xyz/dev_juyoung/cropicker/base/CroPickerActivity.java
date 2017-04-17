@@ -66,6 +66,7 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.toolbarArrowDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, R.drawable.abc_ic_ab_back_material);
         Configs.toolbarDoneDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_DONE_DRAWABLE, R.drawable.ic_done_white_24dp);
         Configs.gridSpanCountOfAlbum = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPAN_COUNT_OF_ALBUM, 2);
+        Configs.gridSpanCountOfMedia = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPAN_COUNT_OF_MEDIA, 3);
         Configs.gridSpacing = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPACING, R.dimen.md_grid_spacing);
         Configs.gridSpacing = getResources().getDimensionPixelSize(Configs.gridSpacing);
     }

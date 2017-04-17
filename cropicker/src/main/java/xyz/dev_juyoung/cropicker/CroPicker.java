@@ -84,6 +84,7 @@ public class CroPicker {
         public static final String EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE = EXTRA_PREFIX + ".BackArrowDrawable";
         public static final String EXTRA_TOOLBAR_DONE_DRAWABLE = EXTRA_PREFIX + ".DoneDrawable";
         public static final String EXTRA_GRID_SPAN_COUNT_OF_ALBUM = EXTRA_PREFIX + ".GridSpanCountOfAlbum";
+        public static final String EXTRA_GRID_SPAN_COUNT_OF_MEDIA = EXTRA_PREFIX + ".GridSpanCountOfMedia";
         public static final String EXTRA_GRID_SPACING = EXTRA_PREFIX + ".GridSpacing";
 
         private Bundle mOptionBundle;
@@ -123,6 +124,10 @@ public class CroPicker {
 
         public void setAlbumGridSpanCount(@NonNull int count) {
             mOptionBundle.putInt(EXTRA_GRID_SPAN_COUNT_OF_ALBUM, count);
+        }
+
+        public void setMediaGridSpanCount(@NonNull int count) {
+            mOptionBundle.putInt(EXTRA_GRID_SPAN_COUNT_OF_MEDIA, count);
         }
 
         public void setGridSpacing(@DimenRes int dimenRes) {
