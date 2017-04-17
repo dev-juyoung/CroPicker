@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
@@ -33,11 +35,115 @@ dependencies {
     compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
     compile "com.android.support:design:${supportLibraryVersion}"
     compile "com.android.support:recyclerview-v7:${supportLibraryVersion}"
+    compile "com.android.support.constraint:constraint-layout:1.0.2"
 
     compile "com.jakewharton:butterknife:${butterknifeVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${butterknifeVersion}"
 
     compile "com.github.bumptech.glide:glide:${glideVersion}"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
+
+group = rootProject.ext.groupId
+version = rootProject.ext.libraryVersion
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name rootProject.ext.libraryName
+            description rootProject.ext.libraryDescription
+            url rootProject.ext.siteUrl
+            inceptionYear '2017'
+
+            packaging 'aar'
+            groupId rootProject.ext.groupId
+            artifactId rootProject.ext.libraryName
+            version rootProject.ext.libraryVersion
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+            scm {
+                connection rootProject.ext.gitUrl
+                url rootProject.ext.siteUrl
+
+            }
+            developers {
+                developer {
+                    id 'dev-juyoung'
+                    name 'Juyoung, Lee'
+                    email 'dev.juyoung@gmail.com'
+                }
+            }
+        }
+    }
+}
+
+Properties localProperties = new Properties()
+localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = localProperties.getProperty("bintray.user")
+    key = localProperties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    publish = true
+    pkg {
+        repo = rootProject.ext.bintrayRepository
+        name = rootProject.ext.libraryName
+        userOrg = user
+        desc = rootProject.ext.libraryDescription
+        licenses = ['Apache-2.0']
+        vcsUrl = rootProject.ext.gitUrl
+        websiteUrl = rootProject.ext.siteUrl
+        issueTrackerUrl = rootProject.ext.issueUrl
+        publicDownloadNumbers = true
+        githubRepo = rootProject.ext.githubRepository
+        githubReleaseNotesFile = rootProject.ext.githubReleaseNotesFile
+        version {
+            name = rootProject.ext.libraryVersion
+            vcsTag = rootProject.ext.libraryVersion
+            released  = new Date()
+        }
+    }
+}
+
+// JCenter publish
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+// Optional docs
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+// Optional javadoc
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    // archives javadocJar // Optional
+    archives sourcesJar
+}
+
+task findConventions << {
+    println project.getConvention()
+}
+
+/*
+publish {
+    groupId = 'xyz.dev_juyoung'
+    artifactId = 'cropicker'
+    publishVersion = '0.0.1-alpha2'
+    desc = 'CroPicker is album and image Picker Library for Android. Supports import a list of Albums and support multiple image selection.'
+    website = 'https://github.com/dev-juyoung/CroPicker'
+}
+*/

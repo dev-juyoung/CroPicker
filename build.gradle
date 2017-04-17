@@ -1,16 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-ext {
-    minSdkVersion = 15
-    targetSdkVersion = 25
-    compileSdkVersion = 25
-    buildToolsVersion = '25.0.2'
-    sourceCompatibilityVersion = JavaVersion.VERSION_1_7
-    targetCompatibilityVersion = JavaVersion.VERSION_1_7
-    // Libraries Version
-    supportLibraryVersion = '25.3.0'
-    butterknifeVersion = '8.5.1'
-    glideVersion = '3.7.0'
-}
+apply from: 'dependencies.gradle'
 
 buildscript {
     repositories {
@@ -19,6 +8,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.5.1'
 
         // NOTE: Do not place your application dependencies here; they belong

@@ -1,0 +1,27 @@
+ext {
+    // Build SDK version
+    minSdkVersion = 15
+    compileSdkVersion = 25
+    targetSdkVersion = 25
+    buildToolsVersion = '25.0.2'
+
+    sourceCompatibilityVersion = 1.7
+    targetCompatibilityVersion = 1.7
+
+    // Bintray Properties
+    bintrayRepository = 'maven'
+    groupId = 'xyz.dev_juyoung'
+    libraryName = 'cropicker'
+    libraryVersion = '0.0.1-alpha4'
+    libraryDescription = 'CroPicker is album and image Picker Library for Android. Supports import a list of Albums and support multiple image selection.'
+    gitUrl = 'https://github.com/dev-juyoung/CroPicker.git'
+    siteUrl = 'https://github.com/dev-juyoung/CroPicker'
+    issueUrl = 'https://github.com/dev-juyoung/CroPicker/issues'
+    githubRepository = 'dev-juyoung/CroPicker'
+    githubReleaseNotesFile = 'CHANGELOG.md'
+
+    // Using library Dependencies version
+    supportLibraryVersion = '25.3.0'
+    butterknifeVersion = '8.5.1'
+    glideVersion = '3.7.0'
+}
