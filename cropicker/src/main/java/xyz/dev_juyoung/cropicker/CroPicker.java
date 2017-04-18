@@ -26,6 +26,8 @@ public class CroPicker {
     public static final int REQUEST_MEDIA = 2172;
     public static final int INDEX_VIEW_TYPE_TEXT = 123;
     public static final int INDEX_VIEW_TYPE_ICON = 321;
+    public static final int MESSAGE_VIEW_TYPE_TOAST = 7;
+    public static final int MESSAGE_VIEW_TYPE_SNACKBAR = 14;
 
     private static final String EXTRA_PREFIX = BuildConfig.APPLICATION_ID;
     public static final String EXTRA_INIT_CONFIGS = EXTRA_PREFIX + ".InitializeConfigs";
@@ -97,6 +99,11 @@ public class CroPicker {
         public static final String EXTRA_INDEX_VIEW_ICON_DRAWABLE = EXTRA_PREFIX + ".IndexViewIconDrawable";
 
         public static final String EXTRA_NOT_SELECTED_MESSAGE = EXTRA_PREFIX + ".NotSelectedMessage";
+
+        public static final String EXTRA_LIMITED_COUNT = EXTRA_PREFIX + ".LimitedCount";
+        public static final String EXTRA_LIMITED_EXCEED_MESSAGE = EXTRA_PREFIX + ".LimitedExceedMessage";
+
+        public static final String EXTRA_MESSAGE_VIEW_TYPE = EXTRA_PREFIX + ".MessageViewType";
 
         private Bundle mOptionBundle;
 
@@ -175,12 +182,36 @@ public class CroPicker {
             mOptionBundle.putInt(EXTRA_INDEX_VIEW_TEXT_COLOR, color);
         }
 
+        /**
+         * Use it with method {@link #setIndexViewType(int)}
+         */
         public void setIndexViewIconDrawable(@DrawableRes int drawable) {
+            // The indexView Type is specified along with the icon to prevent user mistakes.
+            setIndexViewType(INDEX_VIEW_TYPE_ICON);
+
             mOptionBundle.putInt(EXTRA_INDEX_VIEW_ICON_DRAWABLE, drawable);
         }
 
         public void setNotSelectedMessage(@Nullable String text) {
             mOptionBundle.putString(EXTRA_NOT_SELECTED_MESSAGE, text);
+        }
+
+        public void setLimitedCount(@NonNull int count) {
+            mOptionBundle.putInt(EXTRA_LIMITED_COUNT, count);
+        }
+
+        public void setLimitedExceedMessage(@Nullable String text) {
+            mOptionBundle.putString(EXTRA_LIMITED_EXCEED_MESSAGE, text);
+        }
+
+        public void setMessageViewType(@NonNull int type) {
+            int inType = type;
+
+            if (inType != MESSAGE_VIEW_TYPE_TOAST && inType != MESSAGE_VIEW_TYPE_SNACKBAR) {
+                inType = MESSAGE_VIEW_TYPE_TOAST;
+            }
+
+            mOptionBundle.putInt(EXTRA_MESSAGE_VIEW_TYPE, inType);
         }
     }
 }

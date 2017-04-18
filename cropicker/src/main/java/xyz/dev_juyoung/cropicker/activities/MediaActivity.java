@@ -1,5 +1,6 @@
 package xyz.dev_juyoung.cropicker.activities;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import xyz.dev_juyoung.cropicker.Configs;
+import xyz.dev_juyoung.cropicker.CroPicker;
 import xyz.dev_juyoung.cropicker.R;
 import xyz.dev_juyoung.cropicker.R2;
 import xyz.dev_juyoung.cropicker.adapters.MediaAdapter;
@@ -85,6 +87,12 @@ public class MediaActivity extends CroPickerActivity {
             public void onItemClick(View view, int position) {
                 Media item = dispMedia.get(position);
                 boolean isSelected = selectedMedia.contains(item);
+                int selectableCount = Configs.limitedCount - selectedMedia.size();
+
+                if (!isSelected && selectableCount < 1) {
+                    showMessage(Configs.limitedExeedMessage);
+                    return;
+                }
 
                 if (isSelected) {
                     selectedMedia.remove(item);
@@ -139,7 +147,8 @@ public class MediaActivity extends CroPickerActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_done) {
             if (selectedMedia.size() > 0) {
-                showMessage("selectedMedia: " + selectedMedia);
+                setResult(RESULT_OK, new Intent().putParcelableArrayListExtra(CroPicker.EXTRA_RESULT_IMAGES, selectedMedia));
+                finish();
             } else {
                 showMessage(Configs.notSelectedMessage);
             }

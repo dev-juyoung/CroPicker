@@ -22,4 +22,7 @@ public class Configs {
     public static int indexViewTextColor;
     public static int indexViewIconDrawable;
     public static String notSelectedMessage;
+    public static int limitedCount;
+    public static String limitedExeedMessage;
+    public static int messageViewType;
 }

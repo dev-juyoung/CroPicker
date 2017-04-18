@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Sample</string>
+    <string name="app_name">CroPickerSample</string>
+    <string name="empty_information">선택된 사진이 없어요.\n버튼을 눌러 추가해보세요!</string>
+    <string name="btn_add_images">추가하기</string>
 </resources>

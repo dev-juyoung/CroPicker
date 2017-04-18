@@ -98,4 +98,14 @@ public class DirectoryActivity extends CroPickerActivity {
 
         thread.start();
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CroPicker.REQUEST_MEDIA && resultCode == RESULT_OK) {
+            setResult(RESULT_OK, data);
+            finish();
+        }
+    }
 }

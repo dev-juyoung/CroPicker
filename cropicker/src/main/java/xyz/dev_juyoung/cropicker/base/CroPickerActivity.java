@@ -11,6 +11,7 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -79,6 +80,10 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.indexViewIconDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_INDEX_VIEW_ICON_DRAWABLE, R.drawable.ic_check_circle_white_48dp);
         Configs.notSelectedMessage = intent.getStringExtra(CroPicker.Options.EXTRA_NOT_SELECTED_MESSAGE);
         Configs.notSelectedMessage = Configs.notSelectedMessage != null ? Configs.notSelectedMessage : getString(R.string.not_selected_images);
+        Configs.limitedCount = intent.getIntExtra(CroPicker.Options.EXTRA_LIMITED_COUNT, Integer.MAX_VALUE);
+        Configs.limitedExeedMessage = intent.getStringExtra(CroPicker.Options.EXTRA_LIMITED_EXCEED_MESSAGE);
+        Configs.limitedExeedMessage = Configs.limitedExeedMessage != null ? Configs.limitedExeedMessage : getString(R.string.limited_exeed_message, Configs.limitedCount);
+        Configs.messageViewType = intent.getIntExtra(CroPicker.Options.EXTRA_MESSAGE_VIEW_TYPE, CroPicker.MESSAGE_VIEW_TYPE_TOAST);
     }
 
     public void setupToolbar() {
@@ -120,7 +125,15 @@ public class CroPickerActivity extends AppCompatActivity {
     }
 
     public void showMessage(@NonNull String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        showMessage(Configs.messageViewType, message);
+    }
+
+    private void showMessage(int viewType, String message) {
+        if (viewType == CroPicker.MESSAGE_VIEW_TYPE_TOAST) {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        } else {
+            Snackbar.make(getWindow().getDecorView().getRootView(), message, Snackbar.LENGTH_SHORT).show();
+        }
     }
 
     public void progressShow() {
