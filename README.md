@@ -34,7 +34,7 @@ Required Permission
 * Also, if your application is targetSDK version 23+,  
   At runtime, you have to check permission and request permission from the user.
 * Is there any difficulty in implementing it yourself?  
-  If so, look for the library in [android-arsenal] [arsenal].
+  If so, look for the library in [Arsenal][android-arsenal].
 * My sample project uses [TedPermission][ted-permission].  
   **TedPermission** is a **very simple** and **smart** permission check library, so I recommend it.
 
@@ -163,8 +163,9 @@ License
 
  [done]: https://material.io/icons/#ic_done
  [check]: https://material.io/icons/#ic_check_circle
- [arsenal]: https://android-arsenal.com/tag/235?sort=created
+ [android-arsenal]: https://android-arsenal.com/tag/235?sort=created
  [ucrop]: https://github.com/Yalantis/uCrop
  [butterknife]: https://github.com/JakeWharton/butterknife
  [glide]: https://github.com/bumptech/glide
  [ted-permission]: https://github.com/ParkSangGwon/TedPermission
+ [readme-kr]: https://github.com/dev-juyoung/CroPicker/blob/master/README-KR.md
