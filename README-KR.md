@@ -1,6 +1,6 @@
 CroPicker
 =========
-CroPicker는 앨범 및 이미지 선택을 위한 안드로이드용 라이브러리입니다.
+CroPicker는 앨범 및 이미지 선택을 위한 안드로이드용 라이브러리입니다.  
 앨범의 목록을 가져오고 여러장의 이미지를 선택할 수 있는 기능을 지원합니다.
 
 Demo
@@ -25,11 +25,11 @@ Required Permission
     ```xml
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     ```
-* 만약 여러분의 어플리케이션의 targetSDK 버전이 23이상인 경우,
+* 만약 여러분의 어플리케이션의 targetSDK 버전이 23이상인 경우,  
 * 여러분은 런타임 시점에서 권한을 확인하고 사용자에게 권한을 요청해야합니다.
-* 스스로 구현함에 있어 어려움이 있으신가요?
+* 스스로 구현함에 있어 어려움이 있으신가요?  
   그렇다면 [android-arsenal][arsenal]에서 라이브러리르 찾아보세요.
-* 저의 샘플 프로젝트에서는 [TedPermission][ted-permission]을 사용하고 있습니다.
+* 저의 샘플 프로젝트에서는 [TedPermission][ted-permission]을 사용하고 있습니다.  
   **TedPermission**은 매우 간단하고 스마트한 권한확인 라이브러리 입니다. 저는 이 라이브러리를 추천합니다.
 
 Usage
@@ -60,7 +60,7 @@ Usage
 
 Customization
 -------------
-CroPicker 빌더 클래스에는`withOptions (CroPicker.Options options)`메소드가 있습니다.
+CroPicker 빌더 클래스에는`withOptions (CroPicker.Options options)`메소드가 있습니다.  
 'withOptions()'메소드와 함께 사용하면, 몇가지의 원하는 설정을 사용자 정의 할 수 있습니다.
 
 **Methods**
