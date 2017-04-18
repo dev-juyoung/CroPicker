@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CroPicker</string>
+
+    <string name="toolbar_title_album">Album</string>
+    <string name="toolbar_action_done">Done</string>
+
+    <string name="not_found_bucket_id">Album infos not found</string>
+    <string name="not_selected_images">Did you image choose?</string>
+    <string name="limited_exeed_message">You can not select any more.</string>
+</resources>
