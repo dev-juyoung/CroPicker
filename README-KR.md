@@ -15,7 +15,7 @@ Download
 --------
 ```groovy
 dependencies {
-  compile 'xyz.dev_juyoung:cropicker:1.0.0'
+  compile 'xyz.dev_juyoung:cropicker:1.0.1'
 }
 ```
 
