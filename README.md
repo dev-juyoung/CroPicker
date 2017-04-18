@@ -23,11 +23,11 @@ Required Permission
     ```xml
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     ```
-* Also, if your application is targetSDK version 23+,
+* Also, if your application is targetSDK version 23+,  
   At runtime, you have to check permission and request permission from the user.
-* Is there any difficulty in implementing it yourself?
+* Is there any difficulty in implementing it yourself?  
   visit [android-arsenal][arsenal] for find libraries.
-* My sample project uses [TedPermission][ted-permission].
+* My sample project uses [TedPermission][ted-permission].  
   **TedPermission** is a **very simple** and **smart** permission check library, so I recommend it.
 
 Usage
@@ -58,7 +58,7 @@ Usage
 
 Customization
 -------------
-CroPicker builder class has method `withOptions(CroPicker.Options options)`.
+CroPicker builder class has method `withOptions(CroPicker.Options options)`.  
 When used with the `withOptions ()` method, you can customize some of the desired configurations.
 
 **Methods**
