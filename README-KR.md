@@ -1,5 +1,13 @@
 CroPicker
 =========
+CroPicker is album and image Picker Library for Android.  
+Supports import a list of Albums and support multiple image selection.  
+<br/><br/>
+> I'm not proficient in english,  
+> but, I have written README.md in english using the translate of Google.  
+> Even if the grammar is not correct, please forgive me and please help me translate README.md to be a little more helpful.  
+> <br/>
+> For Koreans, read the link here. [README-KR.md][readme-kr]
 
 Demo
 ----
@@ -160,3 +168,4 @@ License
  [butterknife]: https://github.com/JakeWharton/butterknife
  [glide]: https://github.com/bumptech/glide
  [ted-permission]: https://github.com/ParkSangGwon/TedPermission
+ [readme-kr]: https://github.com/dev-juyoung/CroPicker/blob/master/README-KR.md
