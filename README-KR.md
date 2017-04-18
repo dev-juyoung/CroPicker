@@ -1,21 +1,15 @@
 CroPicker
 =========
-CroPicker is album and image Picker Library for Android.  
-Supports import a list of Albums and support multiple image selection.  
-<br/><br/>
-> I'm not proficient in english,  
-> but, I have written README.md in english using the translate of Google.  
-> Even if the grammar is not correct, please forgive me and please help me translate README.md to be a little more helpful.  
-> <br/>
-> For Koreans, read the link here. [README-KR.md][readme-kr]
+CroPicker는 앨범 및 이미지 선택을 위한 안드로이드용 라이브러리입니다.
+앨범의 목록을 가져오고 여러장의 이미지를 선택할 수 있는 기능을 지원합니다.
 
 Demo
 ----
-* Coming soon.
+* 준비중입니다.
 
 Compatibility
 -------------
-* Supports Android ICS 4.0.3+ (API 15)
+* Android ICS 4.0.3(API 15) 이상 지원합니다.
 
 Download
 --------
@@ -31,16 +25,16 @@ Required Permission
     ```xml
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     ```
-* Also, if your application is targetSDK version 23+,  
-  At runtime, you have to check permission and request permission from the user.
-* Is there any difficulty in implementing it yourself?  
-  visit [android-arsenal][arsenal] for find libraries.
-* My sample project uses [TedPermission][ted-permission].  
-  **TedPermission** is a **very simple** and **smart** permission check library, so I recommend it.
+* 만약 여러분의 어플리케이션의 targetSDK 버전이 23이상인 경우,
+* 여러분은 런타임 시점에서 권한을 확인하고 사용자에게 권한을 요청해야합니다.
+* 스스로 구현함에 있어 어려움이 있으신가요?
+  그렇다면 [android-arsenal][arsenal]에서 라이브러리르 찾아보세요.
+* 저의 샘플 프로젝트에서는 [TedPermission][ted-permission]을 사용하고 있습니다.
+  **TedPermission**은 매우 간단하고 스마트한 권한확인 라이브러리 입니다. 저는 이 라이브러리를 추천합니다.
 
 Usage
 -----
-* The CroPicker configuration is created using the builder pattern.
+* CroPicker의 구성은 빌더 패턴을 이용하여 작성됩니다.
     ```java
     // Optional
     // Customization Options
@@ -53,7 +47,7 @@ Usage
         .withOptions(options) //Optional
         .start();
     ```
-* Override onActivityResult method and handle CroPicker result.
+* onActivityResult 메서드를 재정의하고 CroPicker 결과를 처리합니다.
     ```java
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -66,8 +60,8 @@ Usage
 
 Customization
 -------------
-CroPicker builder class has method `withOptions(CroPicker.Options options)`.  
-When used with the `withOptions ()` method, you can customize some of the desired configurations.
+CroPicker 빌더 클래스에는`withOptions (CroPicker.Options options)`메소드가 있습니다.
+'withOptions()'메소드와 함께 사용하면, 몇가지의 원하는 설정을 사용자 정의 할 수 있습니다.
 
 **Methods**
 
@@ -137,10 +131,10 @@ When used with the `withOptions ()` method, you can customize some of the desire
 
 Thanks
 ------
-* [uCrop][ucrop] - Image Cropping Library for Android / Inspired by uCrop's builder pattern.
-* [ButterKnife][butterknife] - Bind Android views and callbacks to fields and methods.
-* [Glide][glide] - An image loading and caching library for Android focused on smooth scrolling
-* [TedPermission][ted-permission] - Easy check permission library for Android Marshmallow
+* [uCrop][ucrop] - Android용 이미지 크롭 라이브러리입니다. uCrop의 빌더패턴에서 영감을 얻었습니다.
+* [ButterKnife][butterknife] - Android용 바인딩 라이브러리입니다.
+* [Glide][glide] - Android용 이미지로드 및 캐싱 라이브러리입니다.
+* [TedPermission][ted-permission] - Android Marshmallow에 대한 권한확인 라이브러리입니다.
 
 License
 -------

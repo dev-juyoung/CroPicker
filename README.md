@@ -34,7 +34,7 @@ Required Permission
 * Also, if your application is targetSDK version 23+,  
   At runtime, you have to check permission and request permission from the user.
 * Is there any difficulty in implementing it yourself?  
-  visit [android-arsenal][arsenal] for find libraries.
+  If so, look for the library in [android-arsenal] [arsenal].
 * My sample project uses [TedPermission][ted-permission].  
   **TedPermission** is a **very simple** and **smart** permission check library, so I recommend it.
 
