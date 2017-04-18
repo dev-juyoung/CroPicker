@@ -28,7 +28,7 @@ Required Permission
 * 만약 여러분의 어플리케이션의 targetSDK 버전이 23이상인 경우,  
 * 여러분은 런타임 시점에서 권한을 확인하고 사용자에게 권한을 요청해야합니다.
 * 스스로 구현함에 있어 어려움이 있으신가요?  
-  그렇다면 [android-arsenal][arsenal]에서 라이브러리르 찾아보세요.
+  그렇다면 [Arsenal][android-arsenal]에서 라이브러리르 찾아보세요.
 * 저의 샘플 프로젝트에서는 [TedPermission][ted-permission]을 사용하고 있습니다.  
   **TedPermission**은 매우 간단하고 스마트한 권한확인 라이브러리 입니다. 저는 이 라이브러리를 추천합니다.
 
@@ -157,7 +157,7 @@ License
 
  [done]: https://material.io/icons/#ic_done
  [check]: https://material.io/icons/#ic_check_circle
- [arsenal]: https://android-arsenal.com/tag/235?sort=created
+ [android-arsenal]: https://android-arsenal.com/tag/235?sort=created
  [ucrop]: https://github.com/Yalantis/uCrop
  [butterknife]: https://github.com/JakeWharton/butterknife
  [glide]: https://github.com/bumptech/glide
