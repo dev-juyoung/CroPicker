@@ -15,7 +15,7 @@ Download
 --------
 ```groovy
 dependencies {
-  compile 'xyz.dev_juyoung:cropicker:1.0.1'
+  compile 'xyz.dev_juyoung:cropicker:1.0.2'
 }
 ```
 
@@ -78,7 +78,7 @@ CroPicker 빌더 클래스에는`withOptions (CroPicker.Options options)`메소�
   * **default** `en - Album / kr - 앨범`
   * `setToolbarTitle("Example") or setToolbarTitle(getString(R.string.xxx))`
 * **setToolbarBackArrowDrawable(@DrawableRes)**
-  * **default** `R.drawable.abc_ic_ab_back_material`
+  * **default** `R.drawable.ic_arrow_back_black_24dp`
   * `setToolbarBackArrowDrawable(R.drawable.xxx)`
 * **setToolbarDoneDrawable(@DrawableRes)**
   * **default** [material.io/icons/#ic_done][done]
@@ -123,7 +123,7 @@ CroPicker 빌더 클래스에는`withOptions (CroPicker.Options options)`메소�
   * **default** `Integer.MAX_VALUE`
   * `setLimitedCount(10)`
 * **setLimitedExceedMessage(String)**
-  * **default** `en - You can not select any more. / kr - 최대 n장 까지만 선택 가능합니다.`
+  * **default** `en - You can not select any more. / kr - 더 이상 선택할 수 없어요...`
   * `setLimitedExceedMessage("BlahBlah") or setLimitedExceedMessage(getString(R.string.xxx)`
 * **setMessageViewType(Int)**
   * **default** `CroPicker.MESSAGE_VIEW_TYPE_TOAST`
