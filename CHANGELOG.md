@@ -12,3 +12,7 @@ CroPicker
 
 ### 1.0.2
 - fixed an error that does not find abc_ic_ab_back_material in versions lower than API17
+
+### 1.0.3
+- removed CroPickerApplication Class.
+- added show and hide progress methods in CroPickerActivity.
