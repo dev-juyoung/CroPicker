@@ -64,7 +64,8 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.toolbarColor = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_COLOR, ContextCompat.getColor(this, R.color.colorPrimary));
         Configs.toolbarWidgetColor = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_WIDGET_COLOR, ContextCompat.getColor(this, R.color.colorWhite));
         Configs.toolbarTitle = intent.getStringExtra(CroPicker.Options.EXTRA_TOOLBAR_TITLE_TEXT);
-        Configs.toolbarArrowDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, R.drawable.abc_ic_ab_back_material);
+        Configs.toolbarArrowDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, R.drawable.ic_arrow_back_black_24dp);
+        // Configs.toolbarArrowDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_BACK_ARROW_DRAWABLE, R.drawable.abc_ic_ab_back_material);
         Configs.toolbarDoneDrawable = intent.getIntExtra(CroPicker.Options.EXTRA_TOOLBAR_DONE_DRAWABLE, R.drawable.ic_done_white_24dp);
         Configs.gridSpanCountOfAlbum = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPAN_COUNT_OF_ALBUM, 2);
         Configs.gridSpanCountOfMedia = intent.getIntExtra(CroPicker.Options.EXTRA_GRID_SPAN_COUNT_OF_MEDIA, 3);
@@ -82,7 +83,8 @@ public class CroPickerActivity extends AppCompatActivity {
         Configs.notSelectedMessage = Configs.notSelectedMessage != null ? Configs.notSelectedMessage : getString(R.string.not_selected_images);
         Configs.limitedCount = intent.getIntExtra(CroPicker.Options.EXTRA_LIMITED_COUNT, Integer.MAX_VALUE);
         Configs.limitedExeedMessage = intent.getStringExtra(CroPicker.Options.EXTRA_LIMITED_EXCEED_MESSAGE);
-        Configs.limitedExeedMessage = Configs.limitedExeedMessage != null ? Configs.limitedExeedMessage : getString(R.string.limited_exeed_message, Configs.limitedCount);
+        Configs.limitedExeedMessage = Configs.limitedExeedMessage != null ? Configs.limitedExeedMessage : getString(R.string.limited_exeed_message);
+        // Configs.limitedExeedMessage = Configs.limitedExeedMessage != null ? Configs.limitedExeedMessage : getString(R.string.limited_exeed_message, Configs.limitedCount);
         Configs.messageViewType = intent.getIntExtra(CroPicker.Options.EXTRA_MESSAGE_VIEW_TYPE, CroPicker.MESSAGE_VIEW_TYPE_TOAST);
     }
 
