@@ -2,7 +2,9 @@ package xyz.dev_juyoung.cropicker.base;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.Window;
@@ -138,11 +141,26 @@ public class CroPickerActivity extends AppCompatActivity {
         }
     }
 
+    private AppCompatDialog progressDialog;
+
     public void progressShow() {
-        CroPickerApplication.getInstance().progressShow(this);
+        if (this.isFinishing()) {
+            return;
+        }
+
+        if (progressDialog == null) {
+            progressDialog = new AppCompatDialog(this);
+            progressDialog.setCancelable(false);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            progressDialog.setContentView(R.layout.cropicker_progress);
+            progressDialog.show();
+        }
     }
 
     public void progressDismiss() {
-        CroPickerApplication.getInstance().progressDismiss();
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
     }
 }
