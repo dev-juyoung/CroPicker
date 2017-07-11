@@ -84,7 +84,8 @@ When used with the `withOptions ()` method, you can customize some of the desire
   * **default** `en - Album / kr - 앨범`
   * `setToolbarTitle("Example") or setToolbarTitle(getString(R.string.xxx))`
 * **setToolbarBackArrowDrawable(@DrawableRes)**
-  * **default** `R.drawable.ic_arrow_back_black_24dp`
+  * **default** [material.io/icons/#ic_arrow_back][back]
+  * **recommend size** 24dp
   * `setToolbarBackArrowDrawable(R.drawable.xxx)`
 * **setToolbarDoneDrawable(@DrawableRes)**
   * **default** [material.io/icons/#ic_done][done]

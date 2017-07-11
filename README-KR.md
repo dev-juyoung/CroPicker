@@ -78,7 +78,8 @@ CroPicker 빌더 클래스에는`withOptions (CroPicker.Options options)`메소�
   * **default** `en - Album / kr - 앨범`
   * `setToolbarTitle("Example") or setToolbarTitle(getString(R.string.xxx))`
 * **setToolbarBackArrowDrawable(@DrawableRes)**
-  * **default** `R.drawable.ic_arrow_back_black_24dp`
+  * **default** [material.io/icons/#ic_arrow_back][back]
+  * **recommend size** 24dp
   * `setToolbarBackArrowDrawable(R.drawable.xxx)`
 * **setToolbarDoneDrawable(@DrawableRes)**
   * **default** [material.io/icons/#ic_done][done]
@@ -154,7 +155,7 @@ License
     limitations under the License.
 
 
-
+ [back]: https://material.io/icons/#ic_arrow_back
  [done]: https://material.io/icons/#ic_done
  [check]: https://material.io/icons/#ic_check_circle
  [android-arsenal]: https://android-arsenal.com/tag/235?sort=created
